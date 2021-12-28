@@ -1,0 +1,14 @@
+Download the results of the last recipe to a local computer by running the following
+command. The ouput is from Webloghits program.
+> hadoop fs -get /data/output4/part-r-00000 2.data
+> sudo gedit scatter.plot
+set term png
+set output "HitsbyMessagetwo"
+set title "Hits by size of the Message"
+set ylabel "no of Hits"
+set xlabel "Size of the message"
+set key left top
+set log y
+set log x
+plot "2.data" using 1:2 title "2 Node" with points
+> gnuplot scatter.plot

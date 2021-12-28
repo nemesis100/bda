@@ -1,0 +1,15 @@
+Download the results of the last recipe to a local computer by running the following
+command. The ouput is from Webloghits program.
+> hadoop fs -get /data/output4/part-r-00000 2.data
+> sudo gedit histogram.plot
+set term png medium
+set output "histogram.png"
+set xlabel "number of bits"
+set ylabel "urls"
+set style histogram clustered gap 2
+set style histogram columnstacked
+set boxwidth 0.9 relative
+set style data histograms
+set style fill solid 1.0 border-1
+plot "2.data" using 1, "2.data" using 2
+> gnuplot histogram.plot
