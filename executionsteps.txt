@@ -1,0 +1,7 @@
+•	export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+•	hadoop com.suntools.javac.Main WordCount1.java
+•	jar cf wcc.jar WordCount1*.class
+•	hadoop fs -mkdir -p /user/input1
+•	hadoop fs -copyFromLocal input  /user/input1
+•	hadoop jar wcc.jar WordCount1 /user/input1 /user/output1
+•	hadoop fs  -cat /user/output1/part-r-00000
